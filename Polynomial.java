@@ -1,13 +1,30 @@
-import java.util.Arrays;
 
 public class Polynomial{
     private double coeffients[];
-
+    private int exp[]; 
     public Polynomial(){
         coeffients = new double[]{0.0};
+        exp = new int[]{0};
     }
     public Polynomial(double arr[]){
-        coeffients = arr; 
+        coeffients = arr;
+        int j = 0; 
+        int n = 0; 
+        for(int i =0; i < coeffients.length; i++){
+            if(coeffients[i] != 0){
+                j++; 
+            }
+        }
+        exp = new int[j];
+
+        for(int i = 0; i < coeffients.length; i++){
+            if(coeffients[i] != 0){
+                exp[n] = n;
+                n++;  
+            }
+        }       
+
+
     }
     public Polynomial add(Polynomial x){
         int length = Math.max(x.coeffients.length, coeffients.length); 
