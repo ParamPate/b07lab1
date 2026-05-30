@@ -12,5 +12,14 @@ public class Driver {
             System.out.println("1 is a root of s");
         else
             System.out.println("1 is not a root of s");
-    }
+        
+        Polynomial m = p1.multiply(p2);
+        System.out.println("m(2) = " + m.evaluate(2));
+        
+        m.saveToFile("poly.txt");
+        
+        File f = new File("poly.txt");
+        Polynomial p3 = new Polynomial(f);
+        System.out.println("p3(2) = " + p3.evaluate(2));
+    }  
 }
